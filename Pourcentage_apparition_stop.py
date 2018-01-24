@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
 #Commandes bash:
-
-#se mettre dans le dossier ou sont toutes les opsines du zebrafish ->
+#se mettre dans le dossier ou sont toutes les opsines du zebrafish :
 # for n in * ; do  grep -v "^>" $n | tr -d '\n' | sed '/^$/d' | sed 's/ //g' > ../linearisation/$n.lin ; done
-
 # cat *.lin > total
+#Permet de lineariser toutes les séquences d'opsines en une sequence "geante"
 
 with open("total" , "r") as mesopsines:
 	seq=mesopsines.read()
@@ -35,4 +34,4 @@ while n!=len(seq):
 
 z=x/n
 print(n)
-print(z)
+print(z)  #z= pourcentage des mutations qui peuvent faire apparaître un stop dans mes opsines.
